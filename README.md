@@ -32,5 +32,5 @@
   <h4>خروجی نمونه :</h4>
   
 <p align="center">
-<img src="https://github.com/hadish100/TCBF/blob/master/images/test.png">
+<img src="https://github.com/hadish100/TCBF/blob/master/images/test.jpg">
 </p>
