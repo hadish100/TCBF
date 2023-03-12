@@ -1,13 +1,20 @@
+const randexp = require('randexp');
 const { exec } = require('child_process');
+
 console.log(" ");
 
+
+
+var test_case_number = 5;
 
 exec(`javac Wrong.java && javac Right.java`,(d,dd,ddd) => 
 {
 
-	for(var i=0;i<50;i++)
+	for(var i=0;i<test_case_number;i++)
 	{
-	var x = get_test_case();
+
+	var x = new randexp(/\d{3}/).gen();
+
 		exec(`node main.js ${x}`,(t,tt,ttt) => 
 		{
 		console.log(tt.replace("\n",""));
@@ -15,24 +22,3 @@ exec(`javac Wrong.java && javac Right.java`,(d,dd,ddd) =>
 	}
 
 });
-
-function rand_int(min,max) 
-{
-min = Math.ceil(min);
-max = Math.floor(max);
-return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function get_test_case()
-{
-var letters = ["G","R","r","L","l","O","M","D","E"];
-
-var res = "";
-
-	for(var i=0;i<10;i++)
-	{
-	res += letters[rand_int(0,8)];
-	}
-
-return res;
-}
